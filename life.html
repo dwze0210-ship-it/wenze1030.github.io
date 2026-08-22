@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Life | Wenze Du</title>
+
+  <style>
+    :root {
+      --bg: #f5f1eb;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #6b7280;
+      --accent: #1f4f46;
+      --accent-light: #e7f0ed;
+      --border: #e5e0d8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    header {
+      padding: 78px 20px 62px;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.45)),
+        url("hero-bg.jpg"),
+        linear-gradient(135deg, #1f4f46, #243b55);
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 46px;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 18px auto 0;
+      font-size: 18px;
+      color: #f9fafb;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.38);
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 13px;
+      color: #374151;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 980px;
+      margin: 44px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: var(--card);
+      margin-bottom: 28px;
+      padding: 32px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.045);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #111827;
+      font-size: 26px;
+    }
+
+    .life-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .life-card:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .life-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 14px;
+      background: #e5e7eb;
+    }
+
+    .life-card h3 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 22px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 5px 11px;
+      margin: 4px 4px 4px 0;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .button-row {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 18px;
+      margin: 6px;
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .button:hover {
+      opacity: 0.88;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      header h1 {
+        font-size: 34px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 8px;
+      }
+
+      main {
+        margin: 28px auto;
+        padding: 0 14px;
+      }
+
+      section {
+        padding: 24px;
+      }
+
+      .life-card {
+        grid-template-columns: 1fr;
+      }
+
+      .life-card img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Life</h1>
+    <p>
+      这里记录生活、旅行、徒步、摄影和一些普通但值得留下来的时刻。
+    </p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="life.html">Life</a>
+    <a href="thoughts.html">Thoughts</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="cv.html">CV</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Life Notes</h2>
+
+      <p>
+        我希望这个页面不是流水账，而是一个生活索引：当我以后回头看时，
+        能看到自己曾经在哪里、看见过什么、和谁一起走过一段路。
+      </p>
+
+      <article class="life-card">
+        <img src="photo1.jpg" alt="A life moment" />
+        <div>
+          <h3>在新西兰的日子</h3>
+          <div class="meta">Auckland / New Zealand · 2026</div>
+          <p>
+            在一个新的城市生活，会让人重新观察很多细节：街道、海边、公交、
+            超市、日落，还有每天一点点变化的心情。
+          </p>
+          <span class="tag">New Zealand</span>
+          <span class="tag">Auckland</span>
+          <span class="tag">Daily Life</span>
+        </div>
+      </article>
+
+      <article class="life-card">
+        <img src="photo2.jpg" alt="Travel moment" />
+        <div>
+          <h3>在路上</h3>
+          <div class="meta">Travel / Walking / Hiking</div>
+          <p>
+            徒步和旅行对我来说，不只是去一个地方，更像是短暂地从原来的节奏里走出来。
+            走路的时候，很多问题会变得没那么急。
+          </p>
+          <span class="tag">Travel</span>
+          <span class="tag">Hiking</span>
+          <span class="tag">Walking</span>
+        </div>
+      </article>
+
+      <article class="life-card">
+        <img src="photo3.jpg" alt="City moment" />
+        <div>
+          <h3>城市和日落</h3>
+          <div class="meta">City / Sunset / Ordinary Moments</div>
+          <p>
+            我喜欢记录城市里一些并不宏大的瞬间：某个路口、某个傍晚、
+            一段音乐，或者一种突然出现的情绪。
+          </p>
+          <span class="tag">City</span>
+          <span class="tag">Sunset</span>
+          <span class="tag">Photography</span>
+        </div>
+      </article>
+    </section>
+
+    <div class="button-row">
+      <a class="button" href="index.html">Back Home</a>
+      <a class="button secondary" href="gallery.html">View Gallery</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Wenze Du. Life notes and ordinary moments.
+  </footer>
+</body>
+</html>
