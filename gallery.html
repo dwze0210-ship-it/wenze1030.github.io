@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gallery | Wenze Du</title>
+
+  <style>
+    :root {
+      --bg: #f5f1eb;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #6b7280;
+      --accent: #1f4f46;
+      --accent-light: #e7f0ed;
+      --border: #e5e0d8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    header {
+      padding: 70px 20px 58px;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.45)),
+        url("hero-bg.jpg"),
+        linear-gradient(135deg, #1f4f46, #243b55);
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 44px;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 18px auto 0;
+      font-size: 18px;
+      color: #f9fafb;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.38);
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 13px;
+      color: #374151;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 44px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.045);
+      margin-bottom: 28px;
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      color: #111827;
+    }
+
+    .intro p {
+      color: var(--muted);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .photo-card {
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.045);
+      transition: 0.2s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: #e5e7eb;
+    }
+
+    .photo-content {
+      padding: 20px;
+    }
+
+    .photo-content h3 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 21px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .photo-content p {
+      margin: 0;
+      color: #374151;
+    }
+
+    .button-row {
+      margin-top: 26px;
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 18px;
+      margin: 6px;
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .button:hover {
+      opacity: 0.88;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      header h1 {
+        font-size: 34px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 8px;
+      }
+
+      main {
+        margin: 28px auto;
+        padding: 0 14px;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card img {
+        height: 230px;
+      }
+
+      .intro {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Gallery</h1>
+    <p>
+      一些照片，一些在路上的瞬间。这里可以记录山、海、城市、日落、朋友，
+      也记录我看见世界时的心情。
+    </p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="life.html">Life</a>
+    <a href="thoughts.html">Thoughts</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="cv.html">CV</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <h2>Photo Notes</h2>
+      <p>
+        这个页面会慢慢更新。我不想把照片只当作“风景”，更想把它们当作生活阶段的标记：
+        我在哪里，我看见了什么，我那时正在想什么。
+      </p>
+    </section>
+
+    <section class="photo-grid">
+      <article class="photo-card">
+        <img src="photo1.jpg" alt="Photo 1" />
+        <div class="photo-content">
+          <h3>First Moment</h3>
+          <div class="meta">Auckland · 2026</div>
+          <p>
+            第一张放在这里的照片。可以是一处风景，也可以是某个让我停下来的瞬间。
+          </p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <img src="photo2.jpg" alt="Photo 2" />
+        <div class="photo-content">
+          <h3>On the Road</h3>
+          <div class="meta">Travel / Walking / Hiking</div>
+          <p>
+            在路上的时候，人会更容易意识到自己正在经历某个不可重复的阶段。
+          </p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <img src="photo3.jpg" alt="Photo 3" />
+        <div class="photo-content">
+          <h3>Ordinary Light</h3>
+          <div class="meta">City · Sunset · Daily Life</div>
+          <p>
+            有时候普通的一束光、一个街角、一段音乐，就足够成为一天的记忆点。
+          </p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <img src="photo4.jpg" alt="Photo 4" />
+        <div class="photo-content">
+          <h3>Landscape</h3>
+          <div class="meta">Mountain / Sea / Sky</div>
+          <p>
+            山海和天空总会提醒我，生活不应该只被任务和截止日期填满。
+          </p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <img src="photo5.jpg" alt="Photo 5" />
+        <div class="photo-content">
+          <h3>People</h3>
+          <div class="meta">Friends · Encounters</div>
+          <p>
+            人和人的相遇很短，但有些片段会被照片保存下来。
+          </p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <img src="photo6.jpg" alt="Photo 6" />
+        <div class="photo-content">
+          <h3>Still Growing</h3>
+          <div class="meta">Personal Archive</div>
+          <p>
+            这个相册还会继续生长，像这个网站本身一样。
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <div class="button-row">
+      <a class="button" href="index.html">Back Home</a>
+      <a class="button secondary" href="thoughts.html">Read Thoughts</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Wenze Du. Gallery of life, travel and ordinary moments.
+  </footer>
+</body>
+</html>
