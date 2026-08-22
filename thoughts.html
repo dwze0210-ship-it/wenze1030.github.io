@@ -79,21 +79,25 @@
     }
 
     main {
-      max-width: 960px;
+      max-width: 980px;
       margin: 44px auto;
       padding: 0 20px;
     }
 
-    section {
+    .intro,
+    .post-card {
       background: var(--card);
-      margin-bottom: 28px;
-      padding: 32px;
       border-radius: 18px;
       border: 1px solid var(--border);
       box-shadow: 0 5px 18px rgba(0, 0, 0, 0.045);
     }
 
-    h2 {
+    .intro {
+      padding: 32px;
+      margin-bottom: 28px;
+    }
+
+    .intro h2 {
       margin-top: 0;
       color: #111827;
       font-size: 26px;
@@ -103,40 +107,55 @@
       color: #374151;
     }
 
-    .post {
-      padding: 24px 0;
-      border-top: 1px solid var(--border);
+    .quote {
+      background: #fffaf0;
+      border-left: 4px solid #c58a2b;
+      padding: 18px 20px;
+      border-radius: 12px;
+      color: #4b3a20;
+      margin-top: 18px;
     }
 
-    .post:first-of-type {
-      border-top: none;
-      padding-top: 0;
+    .post-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
     }
 
-    .post h3 {
+    .post-card {
+      padding: 28px;
+      transition: 0.2s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    }
+
+    .post-card h2 {
       margin: 0 0 8px;
+      font-size: 27px;
       color: var(--accent);
-      font-size: 24px;
     }
 
-    .post h3 a {
+    .post-card h2 a {
       color: var(--accent);
       text-decoration: none;
     }
 
-    .post h3 a:hover {
+    .post-card h2 a:hover {
       text-decoration: underline;
     }
-    
+
     .meta {
       color: var(--muted);
       font-size: 14px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
-    .post p {
-      margin-bottom: 12px;
+    .excerpt {
       color: #374151;
+      margin-bottom: 16px;
     }
 
     .tag {
@@ -149,18 +168,26 @@
       font-size: 13px;
     }
 
-    .quote {
-      background: #fffaf0;
-      border-left: 4px solid #c58a2b;
-      padding: 18px 20px;
-      border-radius: 12px;
-      color: #4b3a20;
-      margin-top: 18px;
+    .read-more {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 16px;
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .read-more:hover {
+      opacity: 0.88;
+      text-decoration: none;
     }
 
     .button-row {
       text-align: center;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .button {
@@ -211,12 +238,13 @@
         padding: 0 14px;
       }
 
-      section {
+      .intro,
+      .post-card {
         padding: 24px;
       }
 
-      .post h3 {
-        font-size: 21px;
+      .post-card h2 {
+        font-size: 22px;
       }
     }
   </style>
@@ -253,48 +281,73 @@
       </div>
     </section>
 
-    <section>
-      <h2>Recent Thoughts</h2>
-
-      <article class="post">
-        <h3>
+    <section class="post-list">
+      <article class="post-card">
+        <h2>
           <a href="posts/why-personal-website.html">
             为什么想做一个个人网站
           </a>
-        </h3>
+        </h2>
+
         <div class="meta">Personal Website · 2026</div>
-        <p>
+
+        <p class="excerpt">
           一开始我只是想做一个线上简历，后来发现个人网站不应该只用来展示“我做过什么”，
           也可以用来记录“我正在经历什么”。简历更像结果，而网站可以保留过程。
         </p>
+
         <span class="tag">Personal Site</span>
         <span class="tag">Life</span>
         <span class="tag">Reflection</span>
+
+        <br />
+
+        <a class="read-more" href="posts/why-personal-website.html">
+          Read More
+        </a>
       </article>
 
-      <article class="post">
-        <h3>研究与生活之间</h3>
+      <article class="post-card">
+        <h2>研究与生活之间</h2>
+
         <div class="meta">Research / Life · 2026</div>
-        <p>
+
+        <p class="excerpt">
           做研究需要长期面对不确定性：问题会变，方法会变，结果也不一定按预期出现。
           生活也是这样。或许真正重要的不是马上得出答案，而是慢慢形成自己的问题。
         </p>
+
         <span class="tag">Research</span>
         <span class="tag">Growth</span>
         <span class="tag">Uncertainty</span>
+
+        <br />
+
+        <a class="read-more" href="posts/template.html">
+          Coming Soon
+        </a>
       </article>
 
-      <article class="post">
-        <h3>在陌生城市里重新观察生活</h3>
+      <article class="post-card">
+        <h2>在陌生城市里重新观察生活</h2>
+
         <div class="meta">Auckland / City · 2026</div>
-        <p>
+
+        <p class="excerpt">
           到一个陌生城市以后，很多平时不会注意的东西会突然变得清晰：
           坐公交、买菜、看海、走路、和人说话。新的地方会让人重新意识到，
           生活其实是由很多很小的细节组成的。
         </p>
+
         <span class="tag">Auckland</span>
         <span class="tag">City</span>
         <span class="tag">Daily Life</span>
+
+        <br />
+
+        <a class="read-more" href="posts/template.html">
+          Coming Soon
+        </a>
       </article>
     </section>
 
