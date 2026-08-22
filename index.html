@@ -1,96 +1,176 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wenze Du | Personal Website</title>
+
   <style>
     body {
-      font-family: Arial, "Microsoft YaHei", sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      background: #f4f6f8;
+      color: #1f2933;
+      line-height: 1.7;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 40px;
+    header {
+      background: #111827;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #d1d5db;
+    }
+
+    nav {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
     }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    nav a {
+      margin: 0 14px;
+      color: #374151;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 24px;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
     }
 
     h2 {
-      margin-top: 36px;
-      border-bottom: 2px solid #eee;
+      margin-top: 0;
+      color: #111827;
+      border-bottom: 2px solid #e5e7eb;
       padding-bottom: 8px;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      color: #666;
     }
 
     .tag {
       display: inline-block;
-      background: #eef3ff;
-      color: #2454a6;
-      padding: 6px 10px;
-      margin: 4px;
-      border-radius: 20px;
+      background: #e8f0ff;
+      color: #1d4ed8;
+      padding: 6px 12px;
+      margin: 5px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
       font-size: 14px;
     }
 
     a {
-      color: #0056cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      color: #2563eb;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>杜文泽 Wenze Du</h1>
-    <p class="subtitle">Master's Student in Industrial Engineering and Management</p>
+  <header>
+    <h1>杜文泽 | Wenze Du</h1>
+    <p>Master's Student in Industrial Engineering and Management</p>
+  </header>
 
-    <h2>About Me</h2>
-    <p>
-      I am a master's student in Industrial Engineering and Management.
-      My research interests include fault diagnosis, intelligent manufacturing,
-      and industrial engineering.
-    </p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <h2>Research Interests</h2>
-    <p>
-      <span class="tag">Fault Diagnosis</span>
-      <span class="tag">Intelligent Manufacturing</span>
-      <span class="tag">Industrial Engineering</span>
-      <span class="tag">Machine Learning</span>
-    </p>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a master's student in Industrial Engineering and Management at Zhengzhou University.
+        My academic interests focus on fault diagnosis, intelligent manufacturing,
+        machine learning, and industrial engineering applications.
+      </p>
+      <p>
+        I am also interested in digital manufacturing, production system optimization,
+        and the application of artificial intelligence in manufacturing systems.
+      </p>
+    </section>
 
-    <h2>Education</h2>
-    <p>
-      Zhengzhou University<br>
-      Master of Industrial Engineering and Management
-    </p>
+    <section id="research">
+      <h2>Research Interests</h2>
+      <p>
+        <span class="tag">Fault Diagnosis</span>
+        <span class="tag">Intelligent Manufacturing</span>
+        <span class="tag">Industrial Engineering</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Digital Manufacturing</span>
+        <span class="tag">Production Optimization</span>
+      </p>
+    </section>
 
-    <h2>Contact</h2>
-    <p>
-      Email: your-email@example.com<br>
-      GitHub: <a href="https://github.com/dwze0210-ship-it">https://github.com/dwze0210-ship-it</a>
-    </p>
-  </div>
+    <section id="education">
+      <h2>Education</h2>
+      <p>
+        <strong>Zhengzhou University</strong><br />
+        Master of Industrial Engineering and Management
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <p>
+        <strong>Fault Diagnosis Based on Machine Learning</strong><br />
+        Research on few-shot fault diagnosis methods for rotating machinery and manufacturing systems.
+      </p>
+      <p>
+        <strong>SMT Workshop Layout and Scheduling Optimization</strong><br />
+        Multi-objective optimization for layout planning, logistics cost reduction,
+        and production scheduling improvement in a multi-variety small-batch manufacturing environment.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: your-email@example.com<br />
+        GitHub:
+        <a href="https://github.com/dwze0210-ship-it" target="_blank">
+          https://github.com/dwze0210-ship-it
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Wenze Du. All rights reserved.
+  </footer>
 </body>
 </html>
