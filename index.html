@@ -4,64 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Wenze Du | Personal Website</title>
+  <title>Wenze Du | 杜文泽</title>
 
   <style>
+    :root {
+      --bg: #f5f1eb;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #6b7280;
+      --accent: #1f4f46;
+      --accent-light: #e7f0ed;
+      --border: #e5e0d8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, "Microsoft YaHei", sans-serif;
-      background: #f4f6f8;
-      color: #1f2933;
-      line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
     }
 
     header {
-      background: linear-gradient(135deg, #111827, #1e3a8a);
+      min-height: 72vh;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(31, 79, 70, 0.72), rgba(31, 79, 70, 0.72)),
+        url("avatar.jpg");
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 70px 20px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+    }
+
+    .hero {
+      max-width: 880px;
     }
 
     .avatar {
-      width: 150px;
-      height: 150px;
+      width: 132px;
+      height: 132px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid white;
-      margin-bottom: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      background: #e5e7eb;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+      background: #ddd;
     }
 
-    header h1 {
+    h1 {
       margin: 0;
-      font-size: 42px;
+      font-size: 48px;
       letter-spacing: 0.5px;
     }
 
-    header p {
-      margin-top: 12px;
-      font-size: 18px;
-      color: #e5e7eb;
+    .subtitle {
+      margin-top: 14px;
+      font-size: 20px;
+      color: #f3f4f6;
     }
 
-    .header-subtitle {
-      font-size: 16px;
-      color: #cbd5e1;
+    .sentence {
+      margin: 24px auto 0;
+      max-width: 720px;
+      font-size: 18px;
+      color: #f9fafb;
     }
 
     nav {
-      background: white;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
       padding: 14px 20px;
       text-align: center;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
     nav a {
-      margin: 0 14px;
+      margin: 0 13px;
       color: #374151;
       text-decoration: none;
       font-weight: bold;
@@ -69,118 +98,160 @@
     }
 
     nav a:hover {
-      color: #2563eb;
+      color: var(--accent);
     }
 
     main {
-      max-width: 920px;
-      margin: 40px auto;
+      max-width: 1040px;
+      margin: 44px auto;
       padding: 0 20px;
     }
 
     section {
-      background: white;
-      margin-bottom: 24px;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      background: var(--card);
+      margin-bottom: 28px;
+      padding: 32px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.045);
     }
 
     h2 {
       margin-top: 0;
+      font-size: 26px;
       color: #111827;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 8px;
-      font-size: 24px;
     }
 
-    h3 {
-      margin-bottom: 6px;
-      color: #1f2937;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
     }
 
-    p {
-      margin-top: 8px;
-      margin-bottom: 12px;
+    .card-link {
+      display: block;
+      padding: 24px;
+      border-radius: 16px;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: 0.2s ease;
+      min-height: 180px;
+    }
+
+    .card-link:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+      border-color: var(--accent);
+    }
+
+    .card-link h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 22px;
+    }
+
+    .card-link p {
+      color: var(--muted);
+      margin-bottom: 0;
     }
 
     .tag {
       display: inline-block;
-      background: #e8f0ff;
-      color: #1d4ed8;
+      background: var(--accent-light);
+      color: var(--accent);
       padding: 6px 12px;
       margin: 5px;
       border-radius: 999px;
       font-size: 14px;
     }
 
-    .project {
-      margin-bottom: 22px;
+    .note {
+      background: #fffaf0;
+      border-left: 4px solid #c58a2b;
+      padding: 18px 20px;
+      border-radius: 12px;
+      color: #4b3a20;
     }
 
-    .project:last-child {
-      margin-bottom: 0;
+    .button-row {
+      margin-top: 22px;
     }
 
-    .info-list {
-      padding-left: 20px;
-    }
-
-    .info-list li {
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: #2563eb;
+    .button {
+      display: inline-block;
+      padding: 10px 18px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
       text-decoration: none;
+      font-weight: bold;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .button.secondary {
+      background: white;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .button:hover {
+      opacity: 0.88;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      color: #6b7280;
+      padding: 36px 20px;
+      color: var(--muted);
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
+    a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 760px) {
       header {
-        padding: 50px 16px 45px;
+        min-height: 68vh;
       }
 
-      header h1 {
-        font-size: 32px;
+      h1 {
+        font-size: 34px;
       }
 
-      header p {
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .sentence {
         font-size: 16px;
-      }
-
-      .avatar {
-        width: 120px;
-        height: 120px;
-      }
-
-      nav {
-        padding: 12px 8px;
       }
 
       nav a {
         display: inline-block;
         margin: 5px 8px;
-        font-size: 14px;
       }
 
       main {
-        margin: 25px auto;
+        margin: 28px auto;
         padding: 0 14px;
       }
 
       section {
-        padding: 22px;
+        padding: 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-link {
+        min-height: auto;
       }
     }
   </style>
@@ -188,129 +259,120 @@
 
 <body>
   <header>
-    <img src="avatar.jpg" alt="Wenze Du" class="avatar" />
+    <div class="hero">
+      <img src="avatar.jpg" alt="Wenze Du" class="avatar" />
 
-    <h1>杜文泽 | Wenze Du</h1>
+      <h1>杜文泽 | Wenze Du</h1>
 
-    <p>Master's Student in Industrial Engineering and Management</p>
+      <p class="subtitle">
+        Industrial Engineering and Management · Fault Diagnosis · Intelligent Manufacturing
+      </p>
 
-    <p class="header-subtitle">
-      Fault Diagnosis · Intelligent Manufacturing · Industrial Engineering
-    </p>
+      <p class="sentence">
+        记录研究、生活、远行和一些正在形成的思考。这里不只是我的简历，也是一处慢慢生长的个人空间。
+      </p>
+
+      <div class="button-row">
+        <a class="button" href="thoughts.html">Read My Thoughts</a>
+        <a class="button secondary" href="gallery.html">View Gallery</a>
+      </div>
+    </div>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="life.html">Life</a>
+    <a href="thoughts.html">Thoughts</a>
+    <a href="gallery.html">Gallery</a>
     <a href="cv.html">CV</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <main>
-    <section id="about">
-      <h2>About Me</h2>
+    <section>
+      <h2>About This Site</h2>
 
       <p>
-        I am a master's student in Industrial Engineering and Management at
-        Zhengzhou University. My academic interests focus on fault diagnosis,
-        intelligent manufacturing, machine learning, and industrial engineering
-        applications.
+        这是我的个人网站。我希望它不只是一个展示教育经历和项目经历的页面，
+        也能记录我在学习、研究、旅行、徒步、摄影和生活中的一些片段。
       </p>
 
       <p>
-        我目前的研究兴趣主要包括故障诊断、智能制造、机器学习在制造系统中的应用，
-        以及工业工程相关的生产系统优化问题。
+        I am a master's student in Industrial Engineering and Management.
+        My academic interests include fault diagnosis, intelligent manufacturing,
+        machine learning, and production system optimization. Outside research,
+        I enjoy hiking, travelling, photography, and observing ordinary moments in different cities.
       </p>
     </section>
 
-    <section id="research">
-      <h2>Research Interests</h2>
+    <section>
+      <h2>Explore</h2>
+
+      <div class="grid">
+        <a class="card-link" href="life.html">
+          <h3>Life</h3>
+          <p>
+            生活记录、旅行、徒步、城市漫游，以及一些在路上的瞬间。
+          </p>
+        </a>
+
+        <a class="card-link" href="thoughts.html">
+          <h3>Thoughts</h3>
+          <p>
+            随笔、研究笔记、读书记录，以及一些关于成长和世界的思考。
+          </p>
+        </a>
+
+        <a class="card-link" href="gallery.html">
+          <h3>Gallery</h3>
+          <p>
+            照片墙。记录山海、城市、日落、朋友和偶然遇见的风景。
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Current Focus</h2>
 
       <p>
         <span class="tag">Fault Diagnosis</span>
         <span class="tag">Intelligent Manufacturing</span>
         <span class="tag">Industrial Engineering</span>
         <span class="tag">Machine Learning</span>
-        <span class="tag">Digital Manufacturing</span>
-        <span class="tag">Production Optimization</span>
-      </p>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-
-      <h3>Zhengzhou University</h3>
-      <p>
-        Master of Industrial Engineering and Management
+        <span class="tag">Photography</span>
+        <span class="tag">Travel Notes</span>
       </p>
 
-      <p>
-        郑州大学 · 工业工程与管理专业硕士研究生
-      </p>
-    </section>
-
-    <section id="projects">
-      <h2>Selected Projects</h2>
-
-      <div class="project">
-        <h3>Fault Diagnosis Based on Machine Learning</h3>
-        <p>
-          Research on few-shot fault diagnosis methods for rotating machinery
-          and manufacturing systems, with a focus on improving model performance
-          under limited labeled data and varying working conditions.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>SMT Workshop Layout and Scheduling Optimization</h3>
-        <p>
-          A multi-objective optimization project for layout planning, logistics
-          cost reduction, and production scheduling improvement in a
-          multi-variety small-batch manufacturing environment.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>Industrial Internet and Enterprise Service Adoption</h3>
-        <p>
-          Research on platform-enterprise interaction mechanisms and enterprise
-          service adoption behavior using game-theoretic and evolutionary
-          modeling approaches.
-        </p>
+      <div class="note">
+        最近我希望把个人网站做成一个长期维护的空间：一部分用于学术展示，
+        一部分用于记录生活和思考。它会慢慢更新，而不是一次性完成。
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
 
-      <ul class="info-list">
-        <li>
-          Email:
-          <span>your-email@example.com</span>
-        </li>
+      <p>
+        Email: your-email@example.com<br />
+        GitHub:
+        <a href="https://github.com/dwze0210-ship-it" target="_blank">
+          https://github.com/dwze0210-ship-it
+        </a><br />
+        Website:
+        <a href="https://wenze1030.ccwu.cc" target="_blank">
+          https://wenze1030.ccwu.cc
+        </a>
+      </p>
 
-        <li>
-          GitHub:
-          <a href="https://github.com/dwze0210-ship-it" target="_blank">
-            https://github.com/dwze0210-ship-it
-          </a>
-        </li>
-
-        <li>
-          Website:
-          <a href="https://wenze1030.ccwu.cc" target="_blank">
-            https://wenze1030.ccwu.cc
-          </a>
-        </li>
-      </ul>
+      <p>
+        <a class="button" href="cv.html">View CV</a>
+      </p>
     </section>
   </main>
 
   <footer>
-    © 2026 Wenze Du. All rights reserved.
+    © 2026 Wenze Du. Built as a personal space for research, life and thoughts.
   </footer>
 </body>
 </html>
