@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Wenze Du | Personal Website</title>
 
   <style>
@@ -15,21 +16,38 @@
     }
 
     header {
-      background: #111827;
+      background: linear-gradient(135deg, #111827, #1e3a8a);
       color: white;
-      padding: 60px 20px;
+      padding: 70px 20px 60px;
       text-align: center;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      background: #e5e7eb;
     }
 
     header h1 {
       margin: 0;
       font-size: 42px;
+      letter-spacing: 0.5px;
     }
 
     header p {
       margin-top: 12px;
       font-size: 18px;
-      color: #d1d5db;
+      color: #e5e7eb;
+    }
+
+    .header-subtitle {
+      font-size: 16px;
+      color: #cbd5e1;
     }
 
     nav {
@@ -39,6 +57,7 @@
       border-bottom: 1px solid #e5e7eb;
       position: sticky;
       top: 0;
+      z-index: 100;
     }
 
     nav a {
@@ -46,6 +65,7 @@
       color: #374151;
       text-decoration: none;
       font-weight: bold;
+      font-size: 15px;
     }
 
     nav a:hover {
@@ -53,7 +73,7 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 920px;
       margin: 40px auto;
       padding: 0 20px;
     }
@@ -61,8 +81,8 @@
     section {
       background: white;
       margin-bottom: 24px;
-      padding: 28px;
-      border-radius: 14px;
+      padding: 30px;
+      border-radius: 16px;
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
     }
 
@@ -71,6 +91,17 @@
       color: #111827;
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 8px;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin-bottom: 6px;
+      color: #1f2937;
+    }
+
+    p {
+      margin-top: 8px;
+      margin-bottom: 12px;
     }
 
     .tag {
@@ -83,6 +114,31 @@
       font-size: 14px;
     }
 
+    .project {
+      margin-bottom: 22px;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-list {
+      padding-left: 20px;
+    }
+
+    .info-list li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -90,16 +146,57 @@
       font-size: 14px;
     }
 
-    a {
-      color: #2563eb;
+    @media (max-width: 600px) {
+      header {
+        padding: 50px 16px 45px;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+
+      nav {
+        padding: 12px 8px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 14px;
+      }
+
+      main {
+        margin: 25px auto;
+        padding: 0 14px;
+      }
+
+      section {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
+    <img src="avatar.jpg" alt="Wenze Du" class="avatar" />
+
     <h1>杜文泽 | Wenze Du</h1>
+
     <p>Master's Student in Industrial Engineering and Management</p>
+
+    <p class="header-subtitle">
+      Fault Diagnosis · Intelligent Manufacturing · Industrial Engineering
+    </p>
   </header>
 
   <nav>
@@ -113,19 +210,23 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
+
       <p>
-        I am a master's student in Industrial Engineering and Management at Zhengzhou University.
-        My academic interests focus on fault diagnosis, intelligent manufacturing,
-        machine learning, and industrial engineering applications.
+        I am a master's student in Industrial Engineering and Management at
+        Zhengzhou University. My academic interests focus on fault diagnosis,
+        intelligent manufacturing, machine learning, and industrial engineering
+        applications.
       </p>
+
       <p>
-        I am also interested in digital manufacturing, production system optimization,
-        and the application of artificial intelligence in manufacturing systems.
+        我目前的研究兴趣主要包括故障诊断、智能制造、机器学习在制造系统中的应用，
+        以及工业工程相关的生产系统优化问题。
       </p>
     </section>
 
     <section id="research">
       <h2>Research Interests</h2>
+
       <p>
         <span class="tag">Fault Diagnosis</span>
         <span class="tag">Intelligent Manufacturing</span>
@@ -138,34 +239,71 @@
 
     <section id="education">
       <h2>Education</h2>
+
+      <h3>Zhengzhou University</h3>
       <p>
-        <strong>Zhengzhou University</strong><br />
         Master of Industrial Engineering and Management
+      </p>
+
+      <p>
+        郑州大学 · 工业工程与管理专业硕士研究生
       </p>
     </section>
 
     <section id="projects">
       <h2>Selected Projects</h2>
-      <p>
-        <strong>Fault Diagnosis Based on Machine Learning</strong><br />
-        Research on few-shot fault diagnosis methods for rotating machinery and manufacturing systems.
-      </p>
-      <p>
-        <strong>SMT Workshop Layout and Scheduling Optimization</strong><br />
-        Multi-objective optimization for layout planning, logistics cost reduction,
-        and production scheduling improvement in a multi-variety small-batch manufacturing environment.
-      </p>
+
+      <div class="project">
+        <h3>Fault Diagnosis Based on Machine Learning</h3>
+        <p>
+          Research on few-shot fault diagnosis methods for rotating machinery
+          and manufacturing systems, with a focus on improving model performance
+          under limited labeled data and varying working conditions.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>SMT Workshop Layout and Scheduling Optimization</h3>
+        <p>
+          A multi-objective optimization project for layout planning, logistics
+          cost reduction, and production scheduling improvement in a
+          multi-variety small-batch manufacturing environment.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Industrial Internet and Enterprise Service Adoption</h3>
+        <p>
+          Research on platform-enterprise interaction mechanisms and enterprise
+          service adoption behavior using game-theoretic and evolutionary
+          modeling approaches.
+        </p>
+      </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>
-        Email: your-email@example.com<br />
-        GitHub:
-        <a href="https://github.com/dwze0210-ship-it" target="_blank">
-          https://github.com/dwze0210-ship-it
-        </a>
-      </p>
+
+      <ul class="info-list">
+        <li>
+          Email:
+          <span>your-email@example.com</span>
+        </li>
+
+        <li>
+          GitHub:
+          <a href="https://github.com/dwze0210-ship-it" target="_blank">
+            https://github.com/dwze0210-ship-it
+          </a>
+        </li>
+
+        <li>
+          Website:
+          <a href="https://wenze1030.ccwu.cc" target="_blank">
+            https://wenze1030.ccwu.cc
+          </a>
+        </li>
+      </ul>
     </section>
   </main>
 
